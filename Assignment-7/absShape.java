@@ -24,9 +24,6 @@ abstract class absShape{
 		filled=filled1;
 	}
 	abstract String tostring();
-	//{
-	//	return "A shape with color of"+getColor()+" and "+isFilled();
-	//}
 	abstract double getArea();
 	abstract double getPerimeter();
     // abstract double getRadius();
