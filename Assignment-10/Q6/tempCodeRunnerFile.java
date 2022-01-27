@@ -1,1 +1,2 @@
-Math.random()*100
+
+                wait();

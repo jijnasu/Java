@@ -1,47 +1,54 @@
-class MinimumBalanceException extends Exception
-{ 
-    public MinimumBalanceException(String s)
-    {
-        super(s);
+import java.util.*;
+// public class sumWuthSync{
+// 	public static int sum=0;
+// 	public void add(int n,int m){
+// 		synchronized(this){
+//             for(int i=n;i<m;i++)
+//                 sum+=i;
+// 			System.out.print("Thread "+n/(m-n)+"sum: "+sum);
+// 		}
+// 	}
+// }
+class sumThread extends Thread{
+    int n,m;
+    public static int sum=0;
+    sumThread(int n,int m){
+        this.n=n;
+        this.m=m;
     }
-}
-class Account{
-	String name;
-    int accNo;
-    double balance;
-    Account(String name,int accNo,double balance){
-        this.name=name;
-        this.accNo=accNo;
-        this.balance=balance;
-    }
-	void deposit(int amt){
-		balance+=amt;
-	}
-    void withdraw(int amt){
-        if(amt>balance)System.out.println("Amount is more than balance.");
-        try
-		{
-			if(balance-amt<=500){
-				throw new MinimumBalanceException("operation cannot be done balance less than 500");
-			   }
-			else
-				balance-=amt;
-
-		}
-		catch(MinimumBalanceException s)
-		{
-			System.out.println(s);
+	public void add(int n,int m){
+		synchronized(this){
+            for(int i=n;i<m;i++)
+                sum+=i;
+			System.out.println("Thread "+n/(m-n)+"sum: "+sum);
 		}
 	}
-    void transfer(Acccount acc1,Acccount acc2,int amt){
-		acc1.withdraw(amt);
-        acc2.deposit(amt);
+    public void run(){
+		add(n,m);
 	}
 }
-
 class Test{
-	public static void main(String args[]){
-		Account acc=new Account("jk",3452627,1000);
-		acc.withdraw(600);
-	}
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int m,n;
+        System.out.println("Enter the no. of natural no.: ");
+        n=sc.nextInt();
+        System.out.println("Enter the no. of threads required: ");
+        m=sc.nextInt();
+        int l = (n/m);
+        sumThread thArr[]=new sumThread[m];
+        for (int i = 0;i<m;i+=1) {
+            thArr[i]=new sumThread(i*l+1,(i+1)*l+1);
+            thArr[i].start();
+            try
+            {
+                thArr[i].join();
+            }
+            catch(Exception e)
+            {
+
+            }
+        }
+        System.out.println("final sum: "+ sumThread.sum);
+    }
 }

@@ -44,20 +44,20 @@ class SyncDriver
         int a[] = {1,2,3,4,5,6,7,8,9,10},l = 10,th = 5,pth = 2;
         Scanner sc = new Scanner(System.in);
 
-        // // INPUTS:
-        // System.out.print("Enter the length of array: ");
-        // l = sc.nextInt();
-        // a = new int[l];
-        // System.out.print("Enter the array: ");
-        // for(int i=0;i<l;i++)
-        //     a[i] = sc.nextInt();
-        // System.out.print("Enter the no. of threads: ");
-        // th = sc.nextInt();
-        // pth = l/th;
-        // System.out.print("The array : ");
-        // for(int i=0;i<l;i++)
-        //     System.out.print(a[i]+" ");
-        // System.out.println("\n");
+        // INPUTS:
+        System.out.print("Enter the length of array: ");
+        l = sc.nextInt();
+        a = new int[l];
+        System.out.print("Enter the array: ");
+        for(int i=0;i<l;i++)
+            a[i] = sc.nextInt();
+        System.out.print("Enter the no. of threads: ");
+        th = sc.nextInt();
+        pth = l/th;
+        System.out.print("The array : ");
+        for(int i=0;i<l;i++)
+            System.out.print(a[i]+" ");
+        System.out.println("\n");
 
 
         MyThread threads[] = new MyThread[th];
