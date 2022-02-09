@@ -2,11 +2,11 @@
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
-class Test extends JFrame implements ActionListener{
+class FormSwing extends JFrame implements ActionListener{
 	JLabel l1,l2,l3,l4,l5,l6,l7,l8,a,b,f;
 	JTextField tf1,tf2,tf3,tf4,tf5,tf6,tf7;
 	JButton d;
-	Test(){
+	FormSwing(){
 		
 		a=new JLabel();
 		a.setBounds(160,330,300,20);
@@ -105,6 +105,6 @@ class Test extends JFrame implements ActionListener{
 		}
 	}
 	public static void main(String args[]){
-		new Test();
+		new FormSwing();
 	}
 }

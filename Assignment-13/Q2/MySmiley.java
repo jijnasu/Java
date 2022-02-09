@@ -1,9 +1,9 @@
 import java.awt.*;
 import java.awt.event.*;
 
-import javax.swing.WindowConstants;
+import javax.swing.*;
 
-public class MySmiley extends Frame// implements ActionListener
+public class MySmiley extends JFrame// implements ActionListener
 {
 
     MySmiley()

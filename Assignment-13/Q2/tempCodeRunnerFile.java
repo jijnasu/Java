@@ -1,9 +1,9 @@
 import java.awt.*;
 import java.awt.event.*;
 
-import javax.swing.WindowConstants;
+import javax.swing.*;
 
-public class MySmiley extends Frame// implements ActionListener
+public class MySmiley extends JFrame// implements ActionListener
 {
 
     MySmiley()
@@ -33,9 +33,9 @@ public class MySmiley extends Frame// implements ActionListener
         g.drawLine(180, 230, 220, 230);
         g.drawArc(140, 140, 120, 120, 220, 100);
         int x[] = {153,163,153}, y[] ={238,248,238};
-        g.setColor(Color.red);
         g.drawLine(153, 238, 153, 265);
         g.drawLine(163, 248, 153, 265);
+        g.setColor(Color.red);
         g.fillPolygon(x,y,3);
         g.drawLine(400-153, 238, 400-153, 265);
         g.drawLine(400-163, 248, 400-153, 265);

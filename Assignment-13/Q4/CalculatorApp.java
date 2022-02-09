@@ -1,39 +1,39 @@
 import java.awt.*;
 import java.awt.event.*;
-
+import javax.swing.*;
 // import javax.swing.plaf.basic.BasicInternalFrameTitlePane.CloseAction;
 // import javax.swing.text.AttributeSet.ColorAttribute;
 
-public class CalculatorApp extends Frame implements ActionListener
+public class CalculatorApp extends JFrame implements ActionListener
 {
-    TextField t;
-    Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,bp,bm,bi,bd,bdot,be,back,clr;
+    JTextField t;
+    JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,bp,bm,bi,bd,bdot,be,back,clr;
     String s="";
     char opr='a';
     double x,y,res,var,temp=0,xdone=0;
         
     CalculatorApp()
     {
-        int lm=80,ld=40,ll=60,lh=30,lbw=50;//l=500,b=500,
-        t = new TextField();
-        b1 = new Button("1");
-        b2 = new Button("2");
-        b3 = new Button("3");
-        b4 = new Button("4");
-        b5 = new Button("5");
-        b6 = new Button("6");
-        b7 = new Button("7");
-        b8 = new Button("8");
-        b9 = new Button("9");
-        b0 = new Button("0");
-        bp = new Button("+");
-        bm = new Button("-");
-        bi = new Button("X");
-        bd = new Button("/");
-        bdot = new Button(".");
-        be = new Button("=");
-        back = new Button("back");
-        clr = new Button("AC");
+        int lm=50,ld=40,ll=60,lh=30,lbw=50;//l=500,b=500,
+        t = new JTextField();
+        b1 = new JButton("1");
+        b2 = new JButton("2");
+        b3 = new JButton("3");
+        b4 = new JButton("4");
+        b5 = new JButton("5");
+        b6 = new JButton("6");
+        b7 = new JButton("7");
+        b8 = new JButton("8");
+        b9 = new JButton("9");
+        b0 = new JButton("0");
+        bp = new JButton("+");
+        bm = new JButton("-");
+        bi = new JButton("X");
+        bd = new JButton("/");
+        bdot = new JButton(".");
+        be = new JButton("=");
+        back = new JButton("back");
+        clr = new JButton("AC");
 
         
 
@@ -87,10 +87,12 @@ public class CalculatorApp extends Frame implements ActionListener
 
 
 
-        setSize(lm*2+ll*4,lm*2+ll*4);
+        setSize(lm*2+ll*4,lm*2+ll*5);
         setLayout(null);
         setVisible(true);
-        setBackground(Color.darkGray);
+        // this.setBackground(Color.black);
+        // setBackground(Color.black);
+        getContentPane().setBackground(Color.darkGray);
         this.addWindowListener(new WindowAdapter(){
             @Override
             public void windowClosing(WindowEvent e) {
